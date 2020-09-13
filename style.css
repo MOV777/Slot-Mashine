@@ -7,7 +7,6 @@ body {
 }
 
 .main {
-  background: url("img/BG.png") no-repeat;
   width: 100%;
   height: 700px;
 }
@@ -15,12 +14,13 @@ body {
 .container {
   max-width: 1170px;
   margin: 0 auto;
+  background: url("img/BG.png") no-repeat;
 }
 
 .spin-box-container {
-  width: 17%;
-  border: 2px solid black;
+  width: 100%;
   overflow-y: hidden;
+  display: flex;
 }
 
 .spin-box-container img {
@@ -29,10 +29,13 @@ body {
   height: 130px;
 }
 
-.spin-box-slide {
+.spin-box-slide,
+.spin-box-slide-2,
+.spin-box-slide-3 {
+  width: 17%;
   height: 390px;
 }
 
 .transformAnimation {
-  transition: 0.4s all ease-in-out;
+  transition: 7s all;
 }
