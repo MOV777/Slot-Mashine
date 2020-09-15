@@ -6,21 +6,22 @@ body {
   padding: 0;
 }
 
-.main {
-  width: 100%;
-  height: 700px;
-}
-
 .container {
-  max-width: 1170px;
+  width: 1170px;
   margin: 0 auto;
   background: url("img/BG.png") no-repeat;
+  background-size: 100%;
+  position: relative;
+  height: 700px;
 }
 
 .spin-box-container {
   width: 100%;
-  overflow-y: hidden;
   display: flex;
+  justify-content: center;
+  position: relative;
+  padding-top: 130px;
+  overflow-y: hidden;
 }
 
 .spin-box-container img {
@@ -36,6 +37,39 @@ body {
   height: 390px;
 }
 
+.spin-box-slide {
+  position: absolute;
+  left: 130px;
+}
+
+.spin-box-slide-2 {
+  position: absolute;
+  left: 420px;
+}
+
+.spin-box-slide-3 {
+  margin-left: 465px;
+}
+/* .spin-box-slide-3 {
+  position: absolute;
+  right: 0px;
+} */
+
 .transformAnimation {
   transition: 7s all;
+}
+
+.btn {
+  position: absolute;
+  right: 66px;
+  top: 266px;
+  width: 100px;
+}
+
+.btn img {
+  width: 120%;
+}
+
+.img-hide {
+  display: none;
 }

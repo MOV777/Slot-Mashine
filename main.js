@@ -119,6 +119,7 @@ window.onload = () => {
   let sl331;
   let sl23;
   let sl32;
+
   let func1 = () => {
     for (let i = 0; i < 3; i++) {
       rand = Math.floor(Math.random() * arr.length);
@@ -184,50 +185,158 @@ window.onload = () => {
   console.log(stepSize);
 
   slider.style.transform = "translateY(" + `${-stepSize * counter}px)`;
+  slider2.style.transform = "translateY(" + `${-stepSize * counter}px)`;
+  slider3.style.transform = "translateY(" + `${-stepSize * counter}px)`;
 
   btn.onclick = () => {
-    for (let i = 0; i <= 50; i++) {
+    btn.setAttribute("disabled", "disabled");
+    for (let i = 0; i <= 70; i++) {
       slider.classList.add("transformAnimation");
+      slider2.classList.add("transformAnimation");
+      slider3.classList.add("transformAnimation");
       counter++;
       slider.style.transform = "translateY(" + `${-stepSize * counter}px)`;
+      slider2.style.transform = "translateY(" + `${-stepSize * counter}px)`;
+      slider3.style.transform = "translateY(" + `${-stepSize * counter}px)`;
 
       let image_1 = document.createElement("img");
       image_1.src = "img/SYM1.png";
-      image_1.className = "spin-img";
+      image_1.classList.add("spin-img");
 
       let image_2 = document.createElement("img");
       image_2.src = "img/SYM3.png";
-      image_2.className = "spin-img";
+      image_2.classList.add("spin-img");
 
       let image_3 = document.createElement("img");
       image_3.src = "img/SYM4.png";
-      image_3.className = "spin-img";
+      image_3.classList.add("spin-img");
 
       let image_4 = document.createElement("img");
       image_4.src = "img/SYM5.png";
-      image_4.className = "spin-img";
+      image_4.classList.add("spin-img");
 
       let image_5 = document.createElement("img");
       image_5.src = "img/SYM6.png";
-      image_5.className = "spin-img";
+      image_5.classList.add("spin-img");
 
       let image_6 = document.createElement("img");
       image_6.src = "img/SYM7.png";
-      image_6.className = "spin-img";
+      image_6.classList.add("spin-img");
+
+      //images2
+
+      let image_11 = document.createElement("img");
+      image_11.src = "img/SYM1.png";
+      image_11.classList.add("spin-img2");
+
+      let image_22 = document.createElement("img");
+      image_22.src = "img/SYM3.png";
+      image_22.classList.add("spin-img2");
+
+      let image_33 = document.createElement("img");
+      image_33.src = "img/SYM4.png";
+      image_33.classList.add("spin-img2");
+
+      let image_44 = document.createElement("img");
+      image_44.src = "img/SYM5.png";
+      image_44.classList.add("spin-img2");
+
+      let image_55 = document.createElement("img");
+      image_55.src = "img/SYM6.png";
+      image_55.classList.add("spin-img2");
+
+      let image_66 = document.createElement("img");
+      image_66.src = "img/SYM7.png";
+      image_66.classList.add("spin-img2");
+
+      //images3
+
+      let image_111 = document.createElement("img");
+      image_111.src = "img/SYM1.png";
+      image_111.classList.add("spin-img3");
+
+      let image_222 = document.createElement("img");
+      image_222.src = "img/SYM3.png";
+      image_222.classList.add("spin-img3");
+
+      let image_333 = document.createElement("img");
+      image_333.src = "img/SYM4.png";
+      image_333.classList.add("spin-img3");
+
+      let image_444 = document.createElement("img");
+      image_444.src = "img/SYM5.png";
+      image_444.classList.add("spin-img3");
+
+      let image_555 = document.createElement("img");
+      image_555.src = "img/SYM6.png";
+      image_555.classList.add("spin-img3");
+
+      let image_666 = document.createElement("img");
+      image_666.src = "img/SYM7.png";
+      image_666.classList.add("spin-img3");
 
       let arr = [];
-
-      arr.push(image_1);
-      arr.push(image_2);
-      arr.push(image_3);
-      arr.push(image_4);
-      arr.push(image_5);
-      arr.push(image_6);
-
-      let rand = Math.floor(Math.random() * arr.length);
-      let randImage = arr[rand];
+      let arr2 = [];
+      let arr3 = [];
       // slider.removeChild(slider.firstChild);
-      slider.appendChild(randImage);
+      let func_slide = (
+        elem1,
+        elem2,
+        elem3,
+        elem4,
+        elem5,
+        elem6,
+        arr_create,
+        slider_param
+      ) => {
+        arr_create.push(elem1);
+        arr_create.push(elem2);
+        arr_create.push(elem3);
+        arr_create.push(elem4);
+        arr_create.push(elem5);
+        arr_create.push(elem6);
+        let rand = Math.floor(Math.random() * arr_create.length);
+        let randImage = arr_create[rand];
+        slider_param.appendChild(randImage);
+      };
+
+      func_slide(
+        image_1,
+        image_2,
+        image_3,
+        image_4,
+        image_5,
+        image_6,
+        arr,
+        slider
+      );
+      func_slide(
+        image_11,
+        image_22,
+        image_33,
+        image_44,
+        image_55,
+        image_66,
+        arr2,
+        slider2
+      );
+      func_slide(
+        image_111,
+        image_222,
+        image_333,
+        image_444,
+        image_555,
+        image_666,
+        arr3,
+        slider3
+      );
+      // let kids;
+      // let func_delete = (elem, kid) => {
+      //   kid = document.querySelectorAll("img");
+      //   elem.removeChild(kid[0]);
+      // };
+
+      // func_delete(slider, kids);
     }
   };
 };
