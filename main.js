@@ -1,10 +1,50 @@
 window.onload = () => {
+  let timerId = setTimeout(function tick() {
+    let loading = document.querySelector(".loading");
+    loading.remove();
+  }, 4000);
   const btn = document.querySelector(".btn");
+  let btn_bet = document.querySelector(".place_a_bet");
+  let money_span = document.querySelector(".money_span");
+  btn.setAttribute("disabled", "disabled");
+  btn.classList.add("btn_d");
+
+  let mathematic = () => {
+    let btn_bet = document.querySelector(".place_a_bet");
+
+    btn_bet.onclick = () => {
+      let money = document.getElementById("money").value;
+      let rate = document.getElementById("rate").value;
+      let money_num = +money;
+      let rate_num = +rate;
+      if (money_num < rate_num) {
+        alert("Rate cant be more than money");
+        btn.setAttribute("disabled", "disabled");
+        btn.classList.add("btn_d");
+      } else if (
+        money == "" ||
+        rate == "" ||
+        money_num == 0 ||
+        rate_num == 0 ||
+        money_num < 0 ||
+        rate_num < 0
+      ) {
+        alert("Please enter the required values");
+        btn.setAttribute("disabled", "disabled");
+        btn.classList.add("btn_d");
+      } else {
+        money_span.innerHTML = "$" + money_num;
+        btn.removeAttribute("disabled");
+        btn.classList.remove("btn_d");
+      }
+    };
+  };
+
+  mathematic();
 
   const slider = document.querySelector(".spin-box-slide");
   const slider2 = document.querySelector(".spin-box-slide-2");
   const slider3 = document.querySelector(".spin-box-slide-3");
-
   let image_1 = document.createElement("img");
   image_1.src = "img/SYM1.png";
   image_1.classList.add("spin-img");
@@ -189,8 +229,17 @@ window.onload = () => {
   slider3.style.transform = "translateY(" + `${-stepSize * counter}px)`;
 
   btn.onclick = () => {
-    btn.setAttribute("disabled", "disabled");
+    // btn.setAttribute("disabled", "disabled");
     for (let i = 0; i <= 70; i++) {
+      btn_bet.setAttribute("disabled", "disabled");
+      btn.setAttribute("disabled", "disabled");
+      btn.classList.add("btn_d");
+
+      let money = document.getElementById("money");
+      let rate = document.getElementById("rate");
+      money.setAttribute("disabled", "disabled");
+      rate.setAttribute("disabled", "disabled");
+
       slider.classList.add("transformAnimation");
       slider2.classList.add("transformAnimation");
       slider3.classList.add("transformAnimation");
@@ -338,5 +387,9 @@ window.onload = () => {
 
       // func_delete(slider, kids);
     }
+
+    // let timerId = setTimeout(function tick() {
+    //   btn_bet.removeAttribute("disabled");
+    // }, 4000);
   };
 };

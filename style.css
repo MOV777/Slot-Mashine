@@ -12,7 +12,9 @@ body {
   background: url("img/BG.png") no-repeat;
   background-size: 100%;
   position: relative;
-  height: 700px;
+  /* height: 700px; */
+  padding-bottom: 150px;
+  z-index: 9;
 }
 
 .spin-box-container {
@@ -59,17 +61,88 @@ body {
   transition: 7s all;
 }
 
-.btn {
+.btnWrap {
   position: absolute;
-  right: 66px;
-  top: 266px;
+  right: 55px;
+  top: 277px;
   width: 100px;
 }
 
-.btn img {
-  width: 120%;
+.btn {
+  border: none;
+  outline: none;
+  background: url("img/BTN_Spin.png") no-repeat;
+  width: 98px;
+  height: 98px;
 }
+
+.btn_d {
+  background: url("img/BTN_Spin_d.png") no-repeat;
+}
+/* .btn img {
+  width: 120%;
+} */
 
 .img-hide {
   display: none;
+}
+
+.results {
+  background: #004750;
+  width: 12%;
+  padding: 1px 0 1px 20px;
+  position: absolute;
+  right: 35px;
+  top: 440px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: yellow;
+  font-size: 13px;
+}
+
+.loading {
+  background: #000;
+  color: #fff;
+  width: 100%;
+  height: 700px;
+  padding-top: 15%;
+  margin: 0 auto;
+  position: absolute;
+  z-index: 10;
+  top: 0;
+}
+
+.loading p {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 100px;
+  font-weight: bold;
+}
+
+.math {
+  background: #004750;
+  width: 15%;
+  padding: 10px;
+  position: absolute;
+  right: 20px;
+  top: 100px;
+  color: yellow;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.math input {
+  width: 100%;
+  background: none;
+  color: #fff;
+}
+
+.rate {
+  padding-top: 10px;
+}
+
+.bet {
+  padding-top: 10px;
+  text-align: center;
 }
