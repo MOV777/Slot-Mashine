@@ -17,12 +17,15 @@ body {
   z-index: 9;
 }
 
+.spin-box {
+  padding-top: 130px;
+}
 .spin-box-container {
   width: 100%;
   display: flex;
   justify-content: center;
   position: relative;
-  padding-top: 130px;
+  /* padding-top: 130px; */
   overflow-y: hidden;
 }
 
@@ -145,4 +148,29 @@ body {
 .bet {
   padding-top: 10px;
   text-align: center;
+}
+
+.win_box,
+.lose_box {
+  background: #004750;
+  font-size: 100px;
+  position: absolute;
+  text-transform: uppercase;
+  width: 850px;
+  text-align: center;
+  padding: 100px 0;
+  top: 175px;
+  font-weight: bold;
+  color: yellow;
+  left: 97px;
+  opacity: 0.7;
+  display: none;
+}
+
+.show_box {
+  display: block;
+}
+
+.hide {
+  visibility: hidden;
 }
